@@ -2,7 +2,7 @@
 // @name         GeoFS ATC Mod
 // @namespace    http://tampermonkey.net/
 // @version      2024-08-04
-// @description  try to take over the world!
+// @description  geofs ATC mod
 // @author       You
 // @match        https://geo-fs.com/geofs.php?v=*
 // @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
