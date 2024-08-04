@@ -100,7 +100,7 @@ function replaceShorthand() {
         return replacedWord;
     }).join(' ');
     
-    alert(replacedMessage);
+    console.log(replacedMessage);
 }
 
 replaceShorthand();
