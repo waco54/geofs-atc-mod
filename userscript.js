@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GeoFS ATC Mod
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.2
 // @description  geofs ATC mod
 // @author       mk158
 // @match        https://geo-fs.com/geofs.php*
