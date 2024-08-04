@@ -1,84 +1,44 @@
 # geofs-atc-mod
-Shorthand atc commands:
+Shorthand atc commands.
 
-rg: roger
-
-c: cleared
-
-pb: pushback
-
-ps: push and start
-
-l: left
-
-r: right
-
-ctr: center
-
-n: north
-
-e: east
-
-s: south
-
-w: west
-
-ne: northeast
-
-nw: northwest
-
-se: southeast
-
-sw: southwest
-
-af: affirmative
-
-ng: negative
-
-tx: taxi
-
-hld: hold
-
-hls: hold short
-
-hcp: hold current position
-
-lup: line up
-
-luw: line up and wait
-
-rwy: runway
-
-m: maintain
-
-cm: climb maintain
-
-dm: descend maintain
-
-ifr: instrument flight rules
-
-vfr: visual flight rules
-
-trf: traffic
-
-tn: turn
-
-fnl: final
-
-nm: mile
-
-nms: miles
-
-dpg: departing
-
-dpt: departure
-
-arg: arriving
-
-arr: arrival
-
-tkf: for take off
-
-lnd: to land
-
-f: face
+1. rg roger,
+2. c cleared,
+3. pb pushback,
+4. ps push and start,
+5. l left,
+6. r right,
+7. ctr center,
+8. n north,
+9. e east,
+10. s south,
+11. w west,
+12. ne northeast,
+13. nw northwest,
+14. se southeast,
+15. sw southwest,
+16. af affirmative,
+17. ng negative,
+18. tx taxi,
+19. hld hold,
+20. hls hold short,
+21. hcp hold current position,
+22. lup line up,
+23. luw line up and wait,
+24. rwy runway,
+25. m maintain,
+26. cm climb maintain,
+27. dm descend maintain,
+28. ifr instrument flight rules,
+29. vfr visual flight rules,
+30. trf traffic,
+31. tn turn,
+32. fnl final,
+33. nm mile,
+34. nms miles,
+35. dpg departing,
+36. dpt. departure,
+37. arg. arriving,
+38. arr. arrival,
+39. tkf. for take off,
+40. lnd. to land
+41. face
