@@ -34,7 +34,7 @@
         if (!n) return;
 
         let a = n.split(" ").map(r => {
-            // Check for a 2-digit number followed by 'l' or 'r' and capitalize
+            // Runway: Check for a 2-digit number followed by 'l' or 'r' and capitalize
             r = r.replace(/(\d{2})([lr])/gi, (match, num, letter) => num + letter.toUpperCase());
             let n = t[r] || r;
             if (!/^\d{2}[LR]$/.test(r)) {
