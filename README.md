@@ -80,3 +80,5 @@ arr: arrival
 tkf: for take off
 
 lnd: to land
+
+f: face
