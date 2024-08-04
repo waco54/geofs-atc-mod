@@ -10,33 +10,20 @@
 // @grant        none
 // ==/UserScript==
 
-// // add atc button (closed for testing purposes)
-// let atcButton = document.createElement('button');
-// atcButton.textContent = 'ATC';
-
-// // Attach the click event listener to the button
-// atcButton.addEventListener('click', atc);
-
-// // Find the target element where the button should be inserted
-// let targetElement = document.querySelector('body > div.geofs-ui-bottom');
-
-// // Insert the button before the specified child element
-// let referenceElement = document.querySelector('body > div.geofs-ui-bottom > div.geofs-ui-bottom-box.geofs-f-standard-ui');
-// if (targetElement && referenceElement) {
-//     targetElement.insertBefore(atcButton, referenceElement);
-// }
-
 let shortHandCommands;
 let phoneticAlphabet;
+let airlines;
 
 async function main() {
 
     try {
         const phoneticAlphabetUrl = "https://mk158.github.io/geofs-atc-mod/JSON/phoneticAlphabet.json";
         const shorthandCommandsUrl = "https://mk158.github.io/geofs-atc-mod/JSON/shortHandCommands.json";
+        const airlinesUrl = "https://mk158.github.io/geofs-atc-mod/JSON/airlines.json";
         phoneticAlphabet = await (await fetch(phoneticAlphabetUrl)).json();
         shorthandCommands = await (await fetch(shorthandCommandsUrl)).json();
-        initializeAtc(phoneticAlphabet, shorthandCommands);
+        airlines = await (await fetch(airlinesUrl)).json();
+        initializeAtc(phoneticAlphabet, shorthandCommands, airlines);
     } catch (error) {
         console.error('Error:', error);
     }
@@ -46,10 +33,25 @@ function atc() {
     let message = prompt('What is your message?');
     if (!message) return;
 
+    // Split the message into words
     let words = message.split(' ');
+
+    // Replace airline abbreviation with full airline name
     let replacedMessage = words.map(word => {
-        // Replace shorthand commands
-        let replacedWord = shorthandCommands[word] || word;
+        // Use regex to check for abbreviation followed by numbers
+        let match = word.match(/^([a-zA-Z]+)(\d*)$/);
+        if (match) {
+            let abbreviation = match[1].toLowerCase();
+            let number = match[2];
+            if (airlines[abbreviation]) {
+                return airlines[abbreviation] + (number ? ' ' + number : '');
+            }
+        }
+
+        // Replace shorthand commands if needed (this part can be kept as is)
+        let replacedWord = shorthandCommands[word.toLowerCase()] || word;
+
+        // Replace phonetic alphabet if applicable
         replacedWord = replacedWord.split('').map(char => {
             // Check if the character is an uppercase letter
             if (char === char.toUpperCase() && char !== char.toLowerCase()) {
@@ -62,6 +64,13 @@ function atc() {
     }).join(' ');
 
     console.log(replacedMessage);
+}
+
+function initializeAtc(phoneticAlphabet, shorthandCommands, airlines) {
+    console.log("ATC Initialized:");
+    console.log("Phonetic Alphabet:", phoneticAlphabet);
+    console.log("Shorthand Commands:", shorthandCommands);
+    console.log("Airlines:", airlines);
 }
 
 main();
