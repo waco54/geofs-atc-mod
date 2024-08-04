@@ -43,7 +43,7 @@ ne: `northeast`<br>
 ng: `negative`<br>
 nw: `northwest`<br>
 r: `turn right`<br>
-rc: `readback correct'
+rc: `readback correct`<br>
 rg: `roger`<br>
 rwy: `runway`<br>
 s: `south`<br>
