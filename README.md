@@ -2,7 +2,7 @@
 > Short-hand atc commands for fast communications.
 
 Example of short-hand command:<br>
-**Input:** ACA123 c ps f e B xp rwy 05 for dpt tx via B, r B, hls rwy 05<br>
+**Input:** `ACA123 c ps f e B xp rwy 05 for dpt tx via B, r B, hls rwy 05`<br>
 **Output:** *"ACA123 cleared for push and start face east Bravo expect runway 05 for departure taxi via Bravo, right Bravo, hold short runway 05."*
 
 // Taxiway letters written in CAPITALS
