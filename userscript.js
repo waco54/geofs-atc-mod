@@ -11,68 +11,72 @@
 // ==/UserScript==
 
 // // add atc button (closed for testing purposes)
-// let atcButton = document.createElement("button");
-// atcButton.textContent = "ATC";
+// let atcButton = document.createElement('button');
+// atcButton.textContent = 'ATC';
 
 // // Attach the click event listener to the button
-// atcButton.addEventListener("click", atc);
+// atcButton.addEventListener('click', atc);
 
 // // Find the target element where the button should be inserted
-// let targetElement = document.querySelector("body > div.geofs-ui-bottom");
+// let targetElement = document.querySelector('body > div.geofs-ui-bottom');
 
 // // Insert the button before the specified child element
-// let referenceElement = document.querySelector("body > div.geofs-ui-bottom > div.geofs-ui-bottom-box.geofs-f-standard-ui");
+// let referenceElement = document.querySelector('body > div.geofs-ui-bottom > div.geofs-ui-bottom-box.geofs-f-standard-ui');
 // if (targetElement && referenceElement) {
 //     targetElement.insertBefore(atcButton, referenceElement);
 // }
 
 function atc() {
     const shorthandCommands = {
-        rg: 'roger',
-        c: 'cleared',
-        pb: 'pushback',
-        ps: 'push and start',
-        l: 'left',
-        r: 'right',
-        ctr: 'center',
-        n: 'north',
-        e: 'east',
-        s: 'south',
-        w: 'west',
-        ne: 'northeast',
-        nw: 'northwest',
-        se: 'southeast',
-        sw: 'southwest',
         af: 'affirmative',
-        ng: 'negative',
-        tx: 'taxi',
-        hld: 'hold',
-        hls: 'hold short',
-        hcp: 'hold current position',
-        lup: 'line up',
-        luw: 'line up and wait',
-        rwy: 'runway',
-        m: 'maintain',
-        cm: 'climb maintain',
-        dm: 'descend maintain',
-        ifr: 'ifr',
-        vfr: 'vfr',
-        trf: 'traffic',
-        tn: 'turn',
-        fnl: 'final',
-        nm: 'mile',
-        nms: 'miles',
-        dpg: 'departing',
-        dpt: 'departure',
         arg: 'arriving',
         arr: 'arrival',
-        tkf: 'for take off',
+        cf: 'confirm',
+        c: 'cleared',
+        cr: 'cross',
+        cm: 'climb maintain',
+        ds: 'decrease speed',
+        dpg: 'departing',
+        dpt: 'departure',
+        dm: 'descend maintain',
+        e: 'east',
+        f: 'face',
+        faf: 'final approach fix',
+        fnl: 'final',
+        ga: 'go around',
+        hcp: 'hold current position',
+        hld: 'hold',
+        hlp: 'enter holding pattern',
+        hls: 'hold short',
+        ifr: 'ifr',
+        is: 'increase speed',
+        l: 'turn left',
+        lup: 'line up',
         lnd: 'to land',
-        f: "face",
-        ga: "go around",
-        xp: "expect",
-        cl: "cancel",
-        hlp: "enter holding pattern",
+        luw: 'line up and wait',
+        m: 'maintain',
+        n: 'north',
+        nm: 'mile',
+        nms: 'miles',
+        ne: 'northeast',
+        ng: 'negative',
+        nw: 'northwest',
+        r: 'turn right',
+        rc: 'readback correct'
+        rg: 'roger',
+        rwy: 'runway',
+        s: 'south',
+        se: 'southeast',
+        sh: 'set heading',
+        sq: 'squack',
+        sw: 'southwest',
+        tkf: 'for take off',
+        trf: 'traffic',
+        tn: 'turn',
+        tx: 'taxi',
+        vfr: 'vfr',
+        xp: 'expect',
+        w: 'west'
     };
 
     const phoneticAlphabet = {
