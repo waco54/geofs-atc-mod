@@ -5,7 +5,7 @@
 // @description  geofs ATC mod
 // @author       mk158
 // @match        https://geo-fs.com/geofs.php?v=*
-// @icon         data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==
+// @icon         none
 // @grant        none
 // ==/UserScript==
 
