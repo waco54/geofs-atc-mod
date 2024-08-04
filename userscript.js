@@ -25,10 +25,6 @@
         Y: 'Yankee', Z: 'Zulu'
     };
 
-    // Debug: Log the message and parts
-    console.log("Message:", message);
-    console.log("Parts:", parts);
-
     // Ensure we have enough parts
     if (parts.length < 2) {
         console.log("Invalid input. Please provide a callsign and command.");
@@ -37,25 +33,21 @@
         let command = parts[1];
         let parameters = parts.slice(2); // Collect all parameters after the command
 
-        // Debug: Log the command and parameters
-        console.log("Command:", command);
-        console.log("Parameters:", parameters);
-
-        if (command === 'c') {
+        if (command === 'cl') {
             // Handle climb command
             let altitude = parseInt(parameters[0], 10) * 1000;
             console.log(`${callsign}, climb to ${altitude} feet.`);
-        } else if (command === 'd') {
+        } else if (command === 'ds') {
             // Handle descend command
             let altitude = parseInt(parameters[0], 10) * 1000;
             console.log(`${callsign}, descend to ${altitude} feet.`);
-        } else if (command === 'h') {
+        } else if (command === 'hd') {
             // Handle heading command
             console.log(`${callsign}, set heading to ${parameters[0]} degrees.`);
         } else if (command === 'hl') {
             // Handle hold short command
             console.log(`${callsign}, hold short of runway ${parameters[0]}.`);
-        } else if (command === 'l') {
+        } else if (command === 'ln') {
             // Handle landing command
             console.log(`${callsign}, cleared to land runway ${parameters[0]}.`);
         } else if (command === 'tk') {
@@ -63,7 +55,7 @@
             console.log(`${callsign}, cleared to take off runway ${parameters[0]}.`);
         } else if (command === 'tx') {
             // Handle taxi command
-            let phoneticRoute = parameters.map(point =>
+            let phoneticRoute = parameters.slice(1).map(point =>
                 point.split('').map(letter => phoneticAlphabet[letter] || letter).join(' ')
             ).join(", ");
             console.log(`${callsign}, cleared to taxi to runway ${parameters[0]} via ${phoneticRoute}.`);
@@ -86,8 +78,20 @@
         } else if (command === 'cr') {
             // Handle cross runway command
             console.log(`${callsign}, cleared to cross runway ${parameters[0]}.`);
-        }else {
-            console.log("Unknown command. Please use 'c' for climb, 'd' for descend, 'h' for heading, 'hl' for hold short, 'l' for landing, 'tk' for takeoff, 'tx' for taxi, 'rs' for reduce speed, 'is' for increase speed, 'ma' for maintain altitude, 'ga' for go around, 'ps' for push and start, 'cr' for cross runway, 'em' for emergency, 'r' for right turn.");
+        } else if (command === 'em') {
+            // Handle emergency command
+            if (parameters.length < 4) {
+                console.log("Invalid input for emergency command. Please provide all required parameters.");
+            } else {
+                let heading = parameters[0].substring(1);
+                let descendAltitude = parseInt(parameters[1].substring(1), 10);
+                let maintainSpeed = parameters[2].substring(1);
+                let runway = parameters[3].toUpperCase();
+
+                console.log(`${callsign} understood. Turn left heading ${heading}, descend to ${descendAltitude}ft, and maintain ${maintainSpeed}kt. I will clear you to runway ${runway}.`);
+            }
+        } else {
+            console.log("Unknown command. Please use 'c' for climb, 'd' for descend, 'h' for heading, 'hl' for hold short, 'l' for landing, 'tk' for takeoff, 'tx' for taxi, 'rs' for reduce speed, 'is' for increase speed, 'ma' for maintain altitude, 'ga' for go around, 'ps' for push and start, 'cr' for cross runway, 'em' for emergency.");
         }
     }
 }
