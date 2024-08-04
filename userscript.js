@@ -2,7 +2,7 @@
 // @name         GeoFS ATC Mod
 // @namespace    http://tampermonkey.net/
 // @version      1.2
-// @description  geofs ATC mod
+// @description  GeoFS ATC mod
 // @author       mk158
 // @match        https://geo-fs.com/geofs.php*
 // @match        https://*.geo-fs.com/geofs.php*
@@ -26,86 +26,21 @@
 //     targetElement.insertBefore(atcButton, referenceElement);
 // }
 
-const shorthandCommands = {
-    af: 'affirmative',
-    arg: 'arriving',
-    arr: 'arrival',
-    cf: 'confirm',
-    c: 'cleared',
-    cr: 'cross',
-    cm: 'climb maintain',
-    ds: 'decrease speed',
-    dpg: 'departing',
-    dpt: 'departure',
-    dm: 'descend maintain',
-    e: 'east',
-    f: 'face',
-    faf: 'final approach fix',
-    fnl: 'final',
-    ga: 'go around',
-    hcp: 'hold current position',
-    hld: 'hold',
-    hlp: 'enter holding pattern',
-    hls: 'hold short',
-    ifr: 'ifr',
-    is: 'increase speed',
-    l: 'turn left',
-    lup: 'line up',
-    lnd: 'to land',
-    luw: 'line up and wait',
-    m: 'maintain',
-    n: 'north',
-    nm: 'mile',
-    nms: 'miles',
-    ne: 'northeast',
-    ng: 'negative',
-    nw: 'northwest',
-    r: 'turn right',
-    rc: 'readback correct',
-    rg: 'roger',
-    rwy: 'runway',
-    s: 'south',
-    se: 'southeast',
-    sh: 'set heading',
-    sq: 'squack',
-    sw: 'southwest',
-    tkf: 'for take off',
-    trf: 'traffic',
-    tn: 'turn',
-    tx: 'taxi',
-    vfr: 'vfr',
-    xp: 'expect',
-    w: 'west'
-};
+let shortHandCommands;
+let phoneticAlphabet;
 
-const phoneticAlphabet = {
-    A: 'Alpha',
-    B: 'Bravo',
-    C: 'Charlie',
-    D: 'Delta',
-    E: 'Echo',
-    F: 'Foxtrot',
-    G: 'Golf',
-    H: 'Hotel',
-    I: 'India',
-    J: 'Juliett',
-    K: 'Kilo',
-    L: 'Lima',
-    M: 'Mike',
-    N: 'November',
-    O: 'Oscar',
-    P: 'Papa',
-    Q: 'Quebec',
-    R: 'Romeo',
-    S: 'Sierra',
-    T: 'Tango',
-    U: 'Uniform',
-    V: 'Victor',
-    W: 'Whiskey',
-    X: 'X-ray',
-    Y: 'Yankee',
-    Z: 'Zulu',
-};
+async function main() {
+
+    try {
+        const phoneticAlphabetUrl = "https://mk158.github.io/geofs-atc-mod/JSON/phoneticAlphabet.json";
+        const shorthandCommandsUrl = "https://mk158.github.io/geofs-atc-mod/JSON/shortHandCommands.json";
+        phoneticAlphabet = await (await fetch(phoneticAlphabetUrl)).json();
+        shorthandCommands = await (await fetch(shorthandCommandsUrl)).json();
+        initializeAtc(phoneticAlphabet, shorthandCommands);
+    } catch (error) {
+        console.error('Error:', error);
+    }
+}
 
 function atc() {
     let message = prompt('What is your message?');
@@ -113,11 +48,14 @@ function atc() {
 
     let words = message.split(' ');
     let replacedMessage = words.map(word => {
-
+        // Replace shorthand commands
         let replacedWord = shorthandCommands[word] || word;
-
         replacedWord = replacedWord.split('').map(char => {
-            return phoneticAlphabet[char] || char;
+            // Check if the character is an uppercase letter
+            if (char === char.toUpperCase() && char !== char.toLowerCase()) {
+                return phoneticAlphabet[char] || char;
+            }
+            return char;
         }).join('');
 
         return replacedWord;
@@ -125,3 +63,5 @@ function atc() {
 
     console.log(replacedMessage);
 }
+
+main();
