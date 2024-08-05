@@ -9,52 +9,52 @@ Example of short-hand command:`<br>
 ## Full command reference quide:
 **Taxiway letters must be written in CAPITALS**
 
-| Abbreviation | Meaning                   |
+| Abbreviation | Output                    |
 |--------------|---------------------------|
-| af           | `affirmative`             |
-| arg          | `arriving`                |
-| arr          | `arrival`                 |
-| cf           | `confirm`                 |
-| c            | `cleared`                 |
-| cr           | `cross`                   |
-| cm           | `climb maintain`          |
-| ds           | `decrease speed`          |
-| dpg          | `departing`               |
-| dpt          | `departure`               |
-| dm           | `descend maintain`        |
-| e            | `east`                    |
-| f            | `face`                    |
-| faf          | `final approach fix`      |
-| fnl          | `final`                   |
-| ga           | `go around`               |
-| hcp          | `hold current position`   |
-| hld          | `hold`                    |
-| hlp          | `enter holding pattern`   |
-| hls          | `hold short`              |
-| ifr          | `ifr`                     |
-| is           | `increase speed`          |
-| l            | `turn left`               |
-| lup          | `line up`                 |
-| lnd          | `to land`                 |
-| luw          | `line up and wait`        |
-| m            | `maintain`                |
-| n            | `north`                   |
-| nm           | `mile`                    |
-| nms          | `miles`                   |
-| ne           | `northeast`               |
-| ng           | `negative`                |
-| nw           | `northwest`               |
-| r            | `turn right`              |
-| rc           | `readback correct`        |
-| rg           | `roger`                   |
-| rwy          | `runway`                  |
-| s            | `south`                   |
-| se           | `southeast`               |
-| sh           | `set heading`             |
-| sq           | `squawk`                  |
-| sw           | `southwest`               |
-| tkf          | `for take off`            |
-| trf          | `traffic`                 |
-| tn           | `turn`                    |
-| tx           | `taxi`                    |
-| vfr          | `vfr`                     |
+| af           | `Affirmative`             |
+| arg          | `Arriving`                |
+| arr          | `Arrival`                 |
+| cf           | `Confirm`                 |
+| c            | `Cleared`                 |
+| cr           | `Cross`                   |
+| cm           | `Climb maintain`          |
+| ds           | `Decrease speed`          |
+| dpg          | `Departing`               |
+| dpt          | `Departure`               |
+| dm           | `Descend maintain`        |
+| e            | `East`                    |
+| f            | `Face`                    |
+| faf          | `Final approach fix`      |
+| fnl          | `Final`                   |
+| ga           | `Go around`               |
+| hcp          | `Hold current position`   |
+| hld          | `Hold`                    |
+| hlp          | `Enter holding pattern`   |
+| hls          | `Hold short`              |
+| ifr          | `IFR`                     |
+| is           | `Increase speed`          |
+| l            | `Turn left`               |
+| lup          | `Line up`                 |
+| lnd          | `To land`                 |
+| luw          | `Line up and wait`        |
+| m            | `Maintain`                |
+| n            | `North`                   |
+| nm           | `Mile`                    |
+| nms          | `Miles`                   |
+| ne           | `Northeast`               |
+| ng           | `Negative`                |
+| nw           | `Northwest`               |
+| r            | `Turn right`              |
+| rc           | `Readback correct`        |
+| rg           | `Roger`                   |
+| rwy          | `Runway`                  |
+| s            | `South`                   |
+| se           | `Southeast`               |
+| sh           | `Set heading`             |
+| sq           | `Squawk`                  |
+| sw           | `Southwest`               |
+| tkf          | `For take off`            |
+| trf          | `Traffic`                 |
+| tn           | `Turn`                    |
+| tx           | `Taxi`                    |
+| vfr          | `VFR`                     |
