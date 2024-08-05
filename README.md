@@ -9,7 +9,7 @@ Example of short-hand command:`<br>
 ## Full command reference quide:
 **Taxiway letters must be written in CAPITALS**
 
-af: &nbsp`affirmative`<br>
+af: &emsp`affirmative`<br>
 arg: `arriving`<br>
 arr: `arrival`<br>
 cf:  `confirm`<br>
