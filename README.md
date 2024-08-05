@@ -14,6 +14,7 @@ Example of short-hand command:<br>
 | af           | `Affirmative`             |
 | arg          | `Arriving`                |
 | arr          | `Arrival`                 |
+| cl           | `cancel`                  |
 | cf           | `Confirm`                 |
 | c            | `Cleared`                 |
 | cr           | `Cross`                   |
