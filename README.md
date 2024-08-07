@@ -34,7 +34,7 @@ Example of short-hand command:<br>
 | hls          | `Hold short`              |
 | ifr          | `IFR`                     |
 | is           | `Increase speed`          |
-| l            | `Turn left`               |
+| l            | `Turn left heading`       |
 | lup          | `Line up`                 |
 | lnd          | `To land`                 |
 | luw          | `Line up and wait`        |
@@ -45,7 +45,7 @@ Example of short-hand command:<br>
 | ne           | `Northeast`               |
 | ng           | `Negative`                |
 | nw           | `Northwest`               |
-| r            | `Turn right`              |
+| r            | `Turn right heading`      |
 | rc           | `Readback correct`        |
 | rg           | `Roger`                   |
 | rwy          | `Runway`                  |
