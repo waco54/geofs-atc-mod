@@ -56,7 +56,7 @@ Example of short-hand command:<br>
 | r            | `Turn right heading`      |
 | rc           | `Readback correct`        |
 | rg           | `Roger`                   |
-| rwy          | `Runway`                  |
+| rw           | `Runway`                  |
 | s            | `South`                   |
 | se           | `Southeast`               |
 | sh           | `Set heading`             |
