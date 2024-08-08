@@ -48,12 +48,12 @@ function atc() {
             }
         }
 
-        // Replace shorthand commands if needed (this part can be kept as is)
+        // Replace shorthand commands
         let replacedWord = shorthandCommands[word.toLowerCase()] || word;
 
-        // Replace phonetic alphabet if applicable
+        // Replace phonetic alphabet
         replacedWord = replacedWord.split('').map(char => {
-            // Check if the character is an uppercase letter
+            // Check for uppercase letter
             if (char === char.toUpperCase() && char !== char.toLowerCase()) {
                 return phoneticAlphabet[char] || char;
             }
