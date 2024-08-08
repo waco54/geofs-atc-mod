@@ -5,6 +5,13 @@ Example of short-hand command:<br>
 **Input:** `ACA123 c ps f e B xp rwy 05 for dpt tx via B, r B, hls rwy 05`<br>
 **Output:** *"ACA123 cleared for push and start face east Bravo expect runway 05 for departure taxi via Bravo, right Bravo, hold short runway 05."*
 
+## How to use:
+1. Install the tampermonkey extension: https://www.tampermonkey.net/
+2. Open the `userscript.js` file in the src folder
+3. Click the "copy as raw" button
+4. Open the tampermonkey extension and make a new script
+5. Paste the code into the new script and press "CTRL + S" to save
+6. Open Geo-FS and make sure the code works
 
 ## Full command reference quide:
 **Taxiway letters must be written in CAPITALS**
