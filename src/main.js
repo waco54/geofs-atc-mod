@@ -56,10 +56,14 @@ function atc() {
 }
 
 function initializeAtc(phoneticAlphabet, shorthandCommands, airlines) {
-    console.log("ATC Initialized:");
+    coolMessage("ATC Initialized:");
     console.log("Phonetic Alphabet:", phoneticAlphabet);
     console.log("Shorthand Commands:", shorthandCommands);
     console.log("Airlines:", airlines);
+}
+
+function coolMessage(message, size) {
+    console.log("%c" + message, "color: lime; -webkit-text-stroke: 1px black; font-size: 30px; font-weight: bold;");
 }
 
 main();
