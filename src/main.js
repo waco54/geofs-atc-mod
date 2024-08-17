@@ -52,7 +52,7 @@ function atc() {
     }).join(' ');
 
     console.log(replacedMessage);
-    document.querySelector("#chatInput").value = replacedMessage;
+    // document.querySelector("#chatInput").value = replacedMessage;
 }
 
 function initializeAtc(phoneticAlphabet, shorthandCommands, airlines) {
