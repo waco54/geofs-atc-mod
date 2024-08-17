@@ -3,7 +3,6 @@ let phoneticAlphabet;
 let airlines;
 
 async function main() {
-
     try {
         const phoneticAlphabetUrl = "https://mk158.github.io/geofs-atc-mod/src/JSON/phoneticAlphabet.json";
         const shorthandCommandsUrl = "https://mk158.github.io/geofs-atc-mod/src/JSON/shortHandCommands.json";
@@ -24,8 +23,39 @@ function atc() {
     // Split the message into words
     let words = message.split(' ');
 
-    // Replace airline abbreviation with full airline name
+    // Extract the callsign (first word) and convert it to the full airline name and flight number
+    let callsign = words[0];
+    let match = callsign.match(/^([a-zA-Z]+)(\d+)$/);
+    if (match) {
+        let airlineCode = match[1].toLowerCase();
+        let flightNumber = match[2];
+        if (airlines[airlineCode]) {
+            callsign = `${airlines[airlineCode]} ${flightNumber}`;
+        }
+    }
+
+    // Check for 'tkf' or 'lnd'
+    if (words.includes('tkf') || words.includes('lnd')) {
+        let command = words.includes('tkf') ? 'tkf' : 'lnd';
+        let runwayIndex = words.indexOf(command) + 2;
+        let runway = words[runwayIndex] || 'unknown';
+
+        // wind data 
+        let windDegrees = ;
+        let windSpeed = ;
+
+        let clearance = command === 'tkf' ? 'cleared for take off' : 'cleared to land';
+        let formattedMessage = `${callsign}, winds ${windDegrees} degrees, ${windSpeed} knots, ${clearance} runway ${runway}.`;
+        console.log(formattedMessage);
+        document.querySelector("#chatInput").value = formattedMessage;
+        return;
+    }
+
+    // Replace airline abbreviation with full airline name in the rest of the message
     let replacedMessage = words.map(word => {
+        // Skip the first word (callsign) since it's already processed
+        if (word === words[0]) return callsign;
+
         // Use regex to check for abbreviation followed by numbers
         let match = word.match(/^([a-zA-Z]+)(\d*)$/);
         if (match) {
@@ -52,7 +82,7 @@ function atc() {
     }).join(' ');
 
     console.log(replacedMessage);
-    // document.querySelector("#chatInput").value = replacedMessage;
+    // document.querySelector("#chatInput").value = replacedMessage; // set the chat input value
 }
 
 function initializeAtc(phoneticAlphabet, shorthandCommands, airlines) {
