@@ -4,9 +4,9 @@ let airlines;
 
 async function main() {
     try {
-        const phoneticAlphabetUrl = "https://mk158.github.io/geofs-atc-mod/src/JSON/phoneticAlphabet.json";
-        const shorthandCommandsUrl = "https://mk158.github.io/geofs-atc-mod/src/JSON/shortHandCommands.json";
-        const airlinesUrl = "https://mk158.github.io/geofs-atc-mod/src/JSON/airlines.json";
+        const phoneticAlphabetUrl = "https://waco54.github.io/geofs-atc-mod/src/JSON/phoneticAlphabet.json";
+        const shorthandCommandsUrl = "https://waco54.github.io/geofs-atc-mod/src/JSON/shortHandCommands.json";
+        const airlinesUrl = "https://waco54.github.io/geofs-atc-mod/src/JSON/airlines.json";
         phoneticAlphabet = await (await fetch(phoneticAlphabetUrl)).json();
         shorthandCommands = await (await fetch(shorthandCommandsUrl)).json();
         airlines = await (await fetch(airlinesUrl)).json();
