@@ -82,7 +82,7 @@ function atc() {
     }).join(' ');
 
     console.log(replacedMessage);
-    // document.querySelector("#chatInput").value = replacedMessage; // set the chat input value
+    document.querySelector("#chatInput").value = replacedMessage; // set the chat input value
 }
 
 function initializeAtc(phoneticAlphabet, shorthandCommands, airlines) {
