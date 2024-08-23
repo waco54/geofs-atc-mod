@@ -7,6 +7,7 @@ function addAtcButton() {
     atcButton.classList.add("atc-button");
     atcButton.innerText = "🎙️ ATC";
     document.body.appendChild(atcButton); // replace with actual place where you want to put the button
+    atcButton.onclick = atc;
 }
 
 addAtcButton();
