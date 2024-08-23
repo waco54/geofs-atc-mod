@@ -15,7 +15,7 @@ addAtcButton();
 function addAtcButtonStyleSheet() {
     let cssLink = document.createElement('link');
     cssLink.rel = 'stylesheet';
-    cssLink.href = 'https://raw.githubusercontent.com/waco54/geofs-atc-mod/main/src/CSS/atc-button.css';
+    cssLink.href = 'https://waco54.github.io/geofs-atc-mod/src/CSS/atc-button.css';
     document.head.appendChild(cssLink);
 }
 
