@@ -98,4 +98,3 @@ function coolMessage(message, size) {
 }
 
 main();
-atc();
