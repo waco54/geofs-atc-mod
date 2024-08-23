@@ -1,50 +1,29 @@
 .atc-button {
     background: #007BFF;
-    /* Blue background */
     color: white;
-    /* White text */
     border: none;
-    /* No border */
     border-radius: 8px;
-    /* Rounded corners */
     padding: 10px 20px;
-    /* Spacing inside the button */
     font-size: 16px;
-    /* Font size */
     cursor: pointer;
-    /* Pointer cursor on hover */
     display: flex;
-    /* Flexbox for alignment */
     align-items: center;
-    /* Center items vertically */
     gap: 10px;
-    /* Space between icon and text */
     transition: background 0.3s, transform 0.2s;
-    /* Smooth transitions */
     position: relative;
-    /* For the pseudo-element */
     overflow: hidden;
-    /* Ensure the pseudo-element doesn’t overflow */
-}
-
-.atc-button .icon {
-    font-size: 20px;
-    /* Size of the icon */
 }
 
 .atc-button .text {
     font-size: 16px;
-    /* Size of the text */
 }
 
 .atc-button:hover {
     background: #0056b3;
-    /* Darker blue on hover */
 }
 
 .atc-button:active {
     transform: scale(0.95);
-    /* Slight scale down on click */
 }
 
 .atc-button::before {
@@ -58,10 +37,8 @@
     opacity: 0;
     transition: opacity 0.3s;
     pointer-events: none;
-    /* Ensure pseudo-element does not interfere with button clicks */
 }
 
 .atc-button:hover::before {
     opacity: 1;
-    /* Show the gradient on hover */
 }
