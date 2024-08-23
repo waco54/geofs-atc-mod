@@ -2,6 +2,24 @@ let shortHandCommands;
 let phoneticAlphabet;
 let airlines;
 
+function addAtcButton() {
+    let atcButton = document.createElement("button");
+    atcButton.classList.add("atc-button");
+    atcButton.innerText = "🎙️ ATC";
+    document.body.appendChild(atcButton); // replace with actual place where you want to put the button
+}
+
+addAtcButton();
+
+function addAtcButtonStyleSheet() {
+    let cssLink = document.createElement('link');
+    cssLink.rel = 'stylesheet';
+    cssLink.href = 'https://raw.githubusercontent.com/waco54/geofs-atc-mod/main/src/CSS/atc-button.css';
+    document.head.appendChild(cssLink);
+}
+
+addAtcButtonStyleSheet();
+
 async function main() {
     try {
         const phoneticAlphabetUrl = "https://waco54.github.io/geofs-atc-mod/src/JSON/phoneticAlphabet.json";
