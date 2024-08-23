@@ -41,8 +41,9 @@ function atc() {
         let runway = words[runwayIndex] || 'unknown';
 
         // wind data 
-        let windDegrees = ;
-        let windSpeed = ;
+        let windDegrees = (geofs.animation.values.heading360 + geofs.animation.values.relativeWind) % 360;
+windDegrees = windDegrees < 0 ? windDegrees + 360 : windDegrees;
+        let windSpeed = Number(geofs.animation.values.windSpeedLabel.replace(' kts', '')); // remove "kts" from the wind speed label so it returns just the number
 
         let clearance = command === 'tkf' ? 'cleared for take off' : 'cleared to land';
         let formattedMessage = `${callsign}, winds ${windDegrees} degrees, ${windSpeed} knots, ${clearance} runway ${runway}.`;
